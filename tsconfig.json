@@ -4,9 +4,9 @@
   "compileOnSave": false,
   "compilerOptions": {
     "paths": {
-      "emf-angular": [
-        "./dist/emf-angular"
-      ]
+      "arrows": [
+        "./dist/arrows"
+      ],
     },
     "outDir": "./dist/out-tsc",
     "strict": true,
