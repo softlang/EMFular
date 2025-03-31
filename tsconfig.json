@@ -4,6 +4,9 @@
   "compileOnSave": false,
   "compilerOptions": {
     "paths": {
+      "EMFular": [
+        "./dist/emfular"
+      ],
       "arrows": [
         "./dist/arrows"
       ],
