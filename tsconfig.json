@@ -7,8 +7,8 @@
       "EMFular": [
         "./dist/emfular"
       ],
-      "arrows": [
-        "./dist/arrows"
+      "svg-graphics": [
+        "./dist/svg-graphics"
       ],
     },
     "outDir": "./dist/out-tsc",
