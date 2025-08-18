@@ -7,6 +7,9 @@
       "EMFular": [
         "./dist/emfular"
       ],
+      "ngx-emfular-helper": [
+        "./dist/ngx-emfular-helper"
+      ],
       "svg-graphics": [
         "./dist/svg-graphics"
       ],
