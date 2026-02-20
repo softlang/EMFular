@@ -36,7 +36,7 @@ module.exports = function (config: any) {
         autoWatch: true,
 
         // Recommended for Angular CLI
-        browsers: ['ChromeHeadless'],
+        //browsers: ['ChromeHeadless'],
 
         singleRun: true,
         restartOnFileChange: true
