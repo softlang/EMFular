@@ -7,6 +7,9 @@
       "EMFular": [
         "./dist/emfular"
       ],
+      "emfular": [
+        "./dist/emfular"
+      ],
       "ngx-emfular-helper": [
         "./dist/ngx-emfular-helper"
       ],
