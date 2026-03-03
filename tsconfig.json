@@ -3,21 +3,26 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "baseUrl": ".",
     "paths": {
       "EMFular": [
         "./dist/emfular"
       ],
       "emfular": [
-        "./dist/emfular"
+        "./dist/emfular",
+        "projects/emfular/src/public-api.ts"
       ],
       "ngx-emfular-helper": [
-        "./dist/ngx-emfular-helper"
+        "./dist/ngx-emfular-helper",
+        "projects/ngx-emfular-helper/src/public-api.ts"
       ],
       "ngx-emfular-integration": [
-        "./dist/ngx-emfular-integration"
+        "./dist/ngx-emfular-integration",
+        "projects/ngx-emfular-integration/src/public-api.ts"
       ],
       "svg-graphics": [
-        "./dist/svg-graphics"
+        "./dist/svg-graphics",
+        "projects/svg-graphics/src/public-api.ts"
       ],
     },
     "outDir": "./dist/out-tsc",
