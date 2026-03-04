@@ -83,14 +83,14 @@ export abstract class Person extends Referencable<Family> {
 
 @eClass(EClasses.Woman)
 export class Woman extends Person {
-  constructor( name?: string) {
-    super( name);
+  constructor( ) {
+    super( "Woman");
   }
 }
 
 @eClass(EClasses.Man)
 export class Man extends Person {
-  constructor( name?: string) {
-    super( name);
+  constructor( ) {
+    super( "Man");
   }
 }
