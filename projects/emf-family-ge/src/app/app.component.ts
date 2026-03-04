@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import {TreeEditorComponent } from "ngx-emfular-integration"
+import { FamilyService } from './shared/basicfamily/edit/family.service';
 
 @Component({
   selector: 'app-root',
@@ -10,4 +11,5 @@ import {TreeEditorComponent } from "ngx-emfular-integration"
 })
 export class AppComponent {
   title = 'emf-family-ge';
+  constructor(public modelService: FamilyService){}
 }

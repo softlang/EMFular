@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HistoryService} from 'ngx-emfular-helper';
 import {JsonOf} from 'emfular';
-import {Family} from '@app/shared/basicfamily/core/family';
+import { Family } from '../core/family';
 
 @Injectable({
   providedIn: 'root'
