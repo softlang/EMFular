@@ -20,7 +20,7 @@
         "./dist/ngx-emfular-integration",
         "projects/ngx-emfular-integration/src/public-api.ts"
       ],
-      "svg-graphics": [
+      "ngx-svg-graphics": [
         "./dist/svg-graphics",
         "projects/svg-graphics/src/public-api.ts"
       ],
