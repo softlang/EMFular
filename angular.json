@@ -134,55 +134,6 @@
           }
         }
       }
-    },
-    "emf-family-ge": {
-      "projectType": "application",
-      "root": "projects/emf-family-ge",
-      "sourceRoot": "projects/emf-family-ge/src",
-      "prefix": "app",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:browser",
-          "options": {
-            "outputPath": "dist/emf-family-ge",
-            "index": "projects/emf-family-ge/src/index.html",
-            "main": "projects/emf-family-ge/src/main.ts",
-            "polyfills": "projects/emf-family-ge/src/polyfills.ts",
-            "tsConfig": "projects/emf-family-ge/tsconfig.app.json",
-            "assets": [
-              "projects/emf-family-ge/src/favicon.ico",
-              "projects/emf-family-ge/src/assets"
-            ],
-            "styles": [
-              "projects/emf-family-ge/src/styles.css"
-            ],
-            "scripts": []
-          }
-        },
-        "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
-          "options": {
-            "browserTarget": "emf-family-ge:build"
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "projects/emf-family-ge/src/test.ts",
-            "polyfills": "projects/emf-family-ge/src/polyfills.ts",
-            "tsConfig": "projects/emf-family-ge/tsconfig.spec.json",
-            "karmaConfig": "projects/emf-family-ge/karma.conf.js",
-            "assets": [
-              "projects/emf-family-ge/src/favicon.ico",
-              "projects/emf-family-ge/src/assets"
-            ],
-            "styles": [
-              "projects/emf-family-ge/src/styles.css"
-            ],
-            "scripts": []
-          }
-        }
-      }
     }
   }
 }
