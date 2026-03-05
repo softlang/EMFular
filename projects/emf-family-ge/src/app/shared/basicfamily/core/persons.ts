@@ -44,10 +44,10 @@ export abstract class Person extends Referencable<Family> {
 
   public static readonly $motherName: string = "mother";
   _mother: ReLinkSingleContainer<Person, this>
-  get mother(): Person|undefined {
+  get mother(): Woman|undefined {
     return this._mother.get()
   }
-  set mother(mother: Person|undefined) { //todo
+  set mother(mother: Woman|undefined) { //todo
     if (mother === undefined && this.mother) {
       this._mother.remove(this.mother);
     } else {
@@ -58,11 +58,11 @@ export abstract class Person extends Referencable<Family> {
   }
 
   public static readonly $fatherName: string = "father";
-  _father: ReLinkSingleContainer<Person, this>
+  _father: ReLinkSingleContainer<Man, this>
   get father(): Person|undefined {
     return this._father.get()
   }
-  set father(father: Person|undefined) { //todo
+  set father(father: Man|undefined) { //todo
     if (father === undefined && this.father) {
       this._father.remove(this.father);
     } else {
@@ -83,14 +83,14 @@ export abstract class Person extends Referencable<Family> {
 
 @eClass(EClasses.Woman)
 export class Woman extends Person {
-  constructor( ) {
-    super( "Woman");
+  constructor(name?: string ) {
+    super( name);
   }
 }
 
 @eClass(EClasses.Man)
 export class Man extends Person {
-  constructor( ) {
-    super( "Man");
+  constructor(name?: string ) {
+    super(name);
   }
 }
