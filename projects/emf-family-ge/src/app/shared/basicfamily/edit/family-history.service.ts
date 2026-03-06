@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Inject, Injectable, PLATFORM_ID} from '@angular/core';
 import {HistoryService} from 'ngx-emfular-helper';
 import {JsonOf} from 'emfular';
 import { Family } from '../core/family';
@@ -8,7 +8,7 @@ import { Family } from '../core/family';
 })
 export class FamilyHistoryService extends HistoryService<JsonOf<Family>>{
 
-  constructor() {
-    super("Family-history_", 50);
+  constructor(@Inject(PLATFORM_ID)  platform: Object) {
+    super("Family-history_", 50, platform);
   }
 }
