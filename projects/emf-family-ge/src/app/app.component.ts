@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import {TreeEditorComponent, BasicModelDetailsService } from "ngx-emfular-integration"
 import { FamilyService } from './shared/basicfamily/edit/family.service';
-import {Family} from './shared/basicfamily/core/family';
 import {Referencable} from 'emfular';
 
 @Component({
@@ -15,7 +14,8 @@ export class AppComponent {
   title = 'Basic Family';
   constructor(
     protected modelService: FamilyService,
-    protected detailsService: BasicModelDetailsService){}
+    protected detailsService: BasicModelDetailsService
+  ){}
 
   chooseElement(referencable: Referencable<any>) {
     this.detailsService.openDetails(referencable, this.modelService);
