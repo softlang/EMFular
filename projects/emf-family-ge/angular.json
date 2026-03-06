@@ -38,7 +38,7 @@
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/emf-family-ge/tsconfig.app.prod.json",
+              "tsConfig": "tsconfig.app.prod.json",
               "budgets": [
                 {
                   "type": "initial",
