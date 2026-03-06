@@ -19,7 +19,7 @@
     "@angular/router": "^19.2.0",
     "emfular": "^9.1.0",
     "ngx-emfular-helper": "^1.0.0",
-    "ngx-emfular-integration": "^0.0.6",
+    "ngx-emfular-integration": "^0.1.0",
     "ngx-svg-graphics": "^3.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
