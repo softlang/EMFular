@@ -1,9 +1,9 @@
 <main class="main">
   <div class="content">
     <h1>Hello, {{ title }}</h1>
-    <p>Congratulations! Your app is running. 🎉</p>
     <emfular-tree-editor
-    [modelService]="modelService">
+    [modelService]="modelService"
+    (chooseElement)="chooseElement($event)">
     </emfular-tree-editor>
 
   </div>
