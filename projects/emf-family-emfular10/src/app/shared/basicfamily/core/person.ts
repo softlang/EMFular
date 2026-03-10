@@ -7,6 +7,8 @@ import {
 } from 'emfular';
 import {Family} from './family';
 import {FamilyMeta, PersonRefs} from "./family-meta";
+import type {Man} from "./man";
+import type {Woman} from "./woman";
 
 @eClass(FamilyMeta, "Person")
 export abstract class Person extends Referencable<Family> {
@@ -29,19 +31,5 @@ export abstract class Person extends Referencable<Family> {
   protected constructor( name?: string) {
     super();
     this.name = name;
-  }
-}
-
-@eClass(FamilyMeta, "Woman")
-export class Woman extends Person {
-  constructor(name?: string ) {
-    super( name);
-  }
-}
-
-@eClass(FamilyMeta, "Man")
-export class Man extends Person {
-  constructor(name?: string ) {
-    super(name);
   }
 }

@@ -1,4 +1,4 @@
-import {Person} from './persons';
+import {Person} from './person';
 import {Referencable, attribute, eClass, JsonOf, Deserializer, ModelList, reference} from 'emfular';
 import {FamilyMeta, FamilyRefs} from "./family-meta";
 

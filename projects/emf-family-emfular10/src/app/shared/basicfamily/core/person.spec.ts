@@ -1,4 +1,5 @@
-import {Man, Woman} from './persons';
+import { Woman } from '../core/woman';
+import { Man } from '../core/man';
 
 describe('Persons', () => {
   it('should create a woman', () => {

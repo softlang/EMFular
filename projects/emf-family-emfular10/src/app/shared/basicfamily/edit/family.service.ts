@@ -3,7 +3,8 @@ import {ModelService} from 'ngx-emfular-integration';
 import {IoService} from 'ngx-emfular-helper';
 import { Family } from '../core/family';
 import { FamilyHistoryService } from './family-history.service';
-import { Woman, Man } from '../core/persons';
+import { Woman } from '../core/woman';
+import { Man } from '../core/man';
 
 
 @Injectable({
