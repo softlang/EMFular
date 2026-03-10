@@ -1,33 +1,25 @@
 import {Person} from './persons';
-import {Referencable, ReTreeListContainer, attribute, eClass, JsonOf, Deserializer} from 'emfular';
-import {EClasses} from '../eclasses';
+import {Referencable, attribute, eClass, JsonOf, Deserializer, ModelList, reference} from 'emfular';
+import {FamilyMeta, FamilyRefs} from "./family-meta";
 
-@eClass(EClasses.Family)
+@eClass(FamilyMeta, "Family")
 export class Family extends Referencable<any> {
   @attribute()
   name?: string;
-  public static readonly $membersName = "members";
-  _members: ReTreeListContainer<Person>;
-  get members(): Person[] {
-    return this._members.get()
-  }
-  addMembers(...members: Person[]) {
-    members.map(m => this._members.add(m));
-  }
-  removeMembers(...members: Person[]) {
-    members.map(m => this._members.remove(m));
-  }
+
+  @reference(FamilyRefs.members)
+  declare members: ModelList<Person>
 
   constructor( name?: string) {
     super();
-    this._members = new ReTreeListContainer<Person>(this, Family.$membersName);
     this.name = name;
   }
 
   static fromJSON (convJson: JsonOf<Family>): Family {
+    const dummy = new Family();
     return Deserializer.fromJSON<Family>(
       convJson,
-      EClasses.Family
+      dummy.getEClass()
     )}
 
 }
