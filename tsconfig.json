@@ -3,10 +3,8 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "baseUrl": ".",
     "paths": {
-      "EMFular": [
-        "./dist/emfular"
-      ],
       "emfular": [
         "./dist/emfular"
       ],
@@ -16,7 +14,7 @@
       "ngx-emfular-integration": [
         "./dist/ngx-emfular-integration"
       ],
-      "svg-graphics": [
+      "ngx-svg-graphics": [
         "./dist/svg-graphics"
       ],
     },

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "svg-graphics": {
+    "ngx-svg-graphics": {
       "projectType": "library",
       "root": "projects/svg-graphics",
       "sourceRoot": "projects/svg-graphics/src",
