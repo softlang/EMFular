@@ -1,0 +1,37 @@
+{
+  "eClass" : "http://www.example.org/basicfamily#//Family",
+  "name" : "TestFamily",
+  "members" : [ {
+    "eClass" : "http://www.example.org/basicfamily#//Woman",
+    "name" : "Alice",
+    "children" : [ {
+      "eClass" : "http://www.example.org/basicfamily#//Woman",
+      "$ref" : "//@members.2"
+    } ]
+  }, {
+    "eClass" : "http://www.example.org/basicfamily#//Man",
+    "name" : "Bob",
+    "children" : [ {
+      "eClass" : "http://www.example.org/basicfamily#//Woman",
+      "$ref" : "//@members.2"
+    } ]
+  }, {
+    "eClass" : "http://www.example.org/basicfamily#//Woman",
+    "name" : "Eve",
+    "parents" : [ {
+      "eClass" : "http://www.example.org/basicfamily#//Woman",
+      "$ref" : "//@members.0"
+    }, {
+      "eClass" : "http://www.example.org/basicfamily#//Man",
+      "$ref" : "//@members.1"
+    } ],
+    "father" : {
+      "eClass" : "http://www.example.org/basicfamily#//Man",
+      "$ref" : "//@members.1"
+    },
+    "mother" : {
+      "eClass" : "http://www.example.org/basicfamily#//Woman",
+      "$ref" : "//@members.0"
+    }
+  } ]
+}
