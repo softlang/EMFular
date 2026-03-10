@@ -13,6 +13,7 @@ export * from './lib/referencing/referencable/container/tree/re-tree-children-co
 export * from './lib/referencing/referencable/container/tree/re-tree-list-container';
 export * from './lib/referencing/referencable/container/tree/re-tree-single-container';
 export * from './lib/referencing/referencable/container/tree/re-tree-parent-container';
+export * from './lib/referencing/referencable/container/hide/model-list'
 
 export * from './lib/serialization/deserializer';
 export * from './lib/serialization/json-deserializable';
@@ -24,3 +25,7 @@ export * from './lib/binding/model-registry'
 export * from './lib/binding/attribute-decorator'
 export * from './lib/binding/attribute-collector'
 export * from './lib/binding/eclass-decorator'
+export * from './lib/binding/model-definition'
+export * from './lib/binding/model-root'
+export * from './lib/binding/reference-creator'
+export * from './lib/binding/reference-decorator'
