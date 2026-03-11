@@ -8,6 +8,7 @@ export const FamilyRefs = {
     } satisfies ReferenceMeta,
 }
 
+
 export const PersonRefs = {
     children: {
         target: "Person",
@@ -19,10 +20,12 @@ export const PersonRefs = {
     },
     mother: { //derived
         target: "Woman",
+        derivingMethod: Symbol("Person.mother.compute"),
         max: 1
     },
     father: { //derived
         target: "Man",
+        derivingMethod: Symbol("Person.father.compute"),
         max: 1
     }
 }
