@@ -26,7 +26,7 @@ export class BasicfamilyEditorComponent{
     this.customButtons = [
       {
         label: "Family",
-        icon: "+",
+        icon: "plus.png",
         action: () => {
           const res = this.modelService.createFamily()
           if(res){
@@ -36,7 +36,7 @@ export class BasicfamilyEditorComponent{
       },
 {
         label: "Man",
-        icon: "+",
+        icon: "plus.png",
         action: () => {
           const res = this.modelService.createMan()
           if(res){
@@ -46,7 +46,7 @@ export class BasicfamilyEditorComponent{
       },
 {
         label: "Woman",
-        icon: "+",
+        icon: "plus.png",
         action: () => {
           const res = this.modelService.createWoman()
           if(res){
