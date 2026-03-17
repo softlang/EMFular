@@ -3,30 +3,33 @@ import {ReContainer} from "./re-container";
 import {ListUpdater} from "../../../utils/list-updater";
 import {ModelList} from "./hide/model-list";
 import {createListProxy} from "./hide/list-proxy";
+import {ReListInterface} from "./re-list-interface";
+import {ReferenceMeta} from "../../../binding/model-definition";
+
 
 export abstract class ReListContainer<
     T extends Referencable<any>,
     P extends Referencable<any>
-> extends ReContainer<T, P>{
+> extends ReContainer<T, P>
+implements ReListInterface<T, P>{
 
     readonly _instance: T[] = [];
 
     private _proxy?: ModelList<T>;
+
+    protected constructor(parent: P, referenceName: string, refMeta: ReferenceMeta) {
+        super(parent, referenceName, refMeta);
+    }
+
+    override get(): T[] {
+        return this._instance;
+    }
 
     get proxy(): ModelList<T> {
         if (!this._proxy) {
             this._proxy = createListProxy(this);
         }
         return this._proxy;
-    }
-
-
-    protected constructor(parent: P, referenceName: string, inverseName?: string ) {
-        super(parent, referenceName, inverseName);
-    }
-
-    override get(): T[] {
-        return this._instance;
     }
 
     override delete() {
