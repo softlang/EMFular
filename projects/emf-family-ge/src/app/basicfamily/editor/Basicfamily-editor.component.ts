@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {
-  BasicModelDetailsService,
+  TreeModelDetailsService,
   EditButtonDef,
   TreeEditorComponent
 } from "ngx-emfular-integration";
@@ -20,7 +20,7 @@ export class BasicfamilyEditorComponent{
   customButtons: Array<EditButtonDef> | null = null;
 
   constructor(
-    public basicDetailsService: BasicModelDetailsService<Family>,
+    public basicDetailsService: TreeModelDetailsService<Family>,
     public modelService: BasicfamilyService,
   ) {
     this.customButtons = [
