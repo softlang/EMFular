@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "svg-graphics": {
+    "ngx-svg-graphics": {
       "projectType": "library",
       "root": "projects/svg-graphics",
       "sourceRoot": "projects/svg-graphics/src",
@@ -94,6 +94,39 @@
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "tsConfig": "projects/ngx-emfular-helper/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    },
+    "ngx-emfular-integration": {
+      "projectType": "library",
+      "root": "projects/ngx-emfular-integration",
+      "sourceRoot": "projects/ngx-emfular-integration/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/ngx-emfular-integration/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ngx-emfular-integration/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/ngx-emfular-integration/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/ngx-emfular-integration/tsconfig.spec.json",
             "polyfills": [
               "zone.js",
               "zone.js/testing"
