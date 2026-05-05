@@ -5,6 +5,7 @@ import {JsonOf} from "../../../../serialization/json-deserializable";
 import {SerializationContext} from "../../../../serialization/serialization-context";
 import {ReTreeChildrenContainer} from "./re-tree-children-container";
 import {ListUpdater} from "../../../../utils/list-updater";
+import {DeletionMode} from "../../../../utils/deletion-mode";
 import {ReListContainer} from "../re-list-container";
 import {ReferenceMeta} from "../../../../binding/model-definition";
 
@@ -45,7 +46,16 @@ implements ReTreeChildrenContainer<T> {
         }
     }
 
-    override remove(item: T): boolean {
+    override remove(item: T, mode: DeletionMode = DeletionMode.RELAXED): boolean {
+        if (mode === DeletionMode.CASCADE) {
+            if (this._instance.indexOf(item) > -1) {
+                // if remove is called on an items parent the CASCADE mode would cause an infinite loop,
+                // however this can be easily avoided since parent removal does not require any kind of following cascading deletes
+                item.destruct(mode);
+                return true;
+            }
+            return false;
+        }
         let removed =  ListUpdater.removeFromList(item, this._instance)
         if(removed){
             item.setParent(undefined);
@@ -54,8 +64,8 @@ implements ReTreeChildrenContainer<T> {
         return false;
     }
 
-    override delete() {
-        ListUpdater.destructAllFromChangingList(this._instance)
+    override delete(mode: DeletionMode = DeletionMode.RELAXED) {
+        ListUpdater.destructAllFromChangingList(this._instance, mode)
     }
 
     //creates one child level plus calls next createChildren

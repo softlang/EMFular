@@ -5,6 +5,7 @@ import {ModelList} from "./hide/model-list";
 import {createListProxy} from "./hide/list-proxy";
 import {ReListInterface} from "./re-list-interface";
 import {ReferenceMeta} from "../../../binding/model-definition";
+import {DeletionMode} from "../../../utils/deletion-mode";
 
 
 export abstract class ReListContainer<
@@ -32,8 +33,8 @@ implements ReListInterface<T, P>{
         return this._proxy;
     }
 
-    override delete() {
-        ListUpdater.destructAllFromChangingList(this._instance)
+    override delete(mode: DeletionMode = DeletionMode.RELAXED) {
+        ListUpdater.destructAllFromChangingList(this._instance, mode)
     }
 
     move(from: number, to: number) {

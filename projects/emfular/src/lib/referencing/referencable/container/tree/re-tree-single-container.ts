@@ -6,6 +6,7 @@ import {SerializationContext} from "../../../../serialization/serialization-cont
 import {ReTreeChildrenContainer} from "./re-tree-children-container";
 import {ReSingleContainer} from "../re-single-container";
 import {ReferenceMeta} from "../../../../binding/model-definition";
+import {DeletionMode} from "../../../../utils/deletion-mode";
 
 export class ReTreeSingleContainer<T extends Referencable<any>>
     extends ReSingleContainer<T, T["ParentType"]>
@@ -37,17 +38,27 @@ implements ReTreeChildrenContainer<T> {
         }
     }
 
-    remove(item: T): boolean {
+    remove(item: T, mode: DeletionMode = DeletionMode.RELAXED): boolean {
         if(this._instance == item) {
-            this._instance = undefined;
-            item.setParent(undefined);
+            if (mode === DeletionMode.RELAXED) {
+                this._instance = undefined;
+                item.setParent(undefined);
+                return true;
+            }
+            // if remove is called on an items parent the CASCADE mode would cause an infinite loop,
+            // however this can be easily avoided since parent removal does not require any kind of following cascading deletes
+            this._instance?.destruct(mode);
             return true;
         }
         return false;
     }
 
-    delete() {
-        this._instance?.destruct()
+    delete(mode: DeletionMode = DeletionMode.RELAXED) {
+        if (mode === DeletionMode.CASCADE) {
+            this._instance?.destruct(mode)
+        } else if (mode === DeletionMode.RELAXED) {
+            this._instance?.parent?.remove(this._instance, mode)
+        }
     }
 
     fromJson(formerPrefix: string, context: Deserializer, json: any) {

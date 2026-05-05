@@ -1,5 +1,5 @@
 import {Ref} from "../ref/ref";
-import { v4 as uuidv4 } from 'uuid';
+import {v4 as uuidv4} from 'uuid';
 import {ReContainer} from "./container/re-container";
 import {Deserializer} from "../../serialization/deserializer";
 import {getAllAttributes} from "../../binding/attribute-collector";
@@ -11,6 +11,7 @@ import {ReTreeChildrenContainer} from "./container/tree/re-tree-children-contain
 import {ReLinkContainer} from "./container/link/re-link-container";
 import {ModelRegistry} from "../../binding/model-registry";
 import {ClassMeta, ModelDefinition, ReferenceMeta} from "../../binding/model-definition";
+import {DeletionMode} from "../../utils/deletion-mode";
 
 /** base class for CORE models.
  *
@@ -74,13 +75,15 @@ export abstract class Referencable<
     }
   }
 
-  destruct() {
-    this.$parent?.remove(this)
+  destruct(mode: DeletionMode = DeletionMode.RELAXED) {
+    // removal from parent is always called with deletion mode RELAXED, otherwise infinite loops occur (see remove in re-tree-list/single-container.ts)
+    // tests in files re-link-list/single-container.spec.ts and re-tree-list/single-container.spec.ts fail when not setting RELAXED mode explicitly
+    this.$parent?.remove(this, DeletionMode.RELAXED)
     this.$otherReferences.forEach(refContainer => {
-      refContainer.removeFromInverse(this)
+      refContainer.removeFromInverse(this, mode)
     })
     this.$treeChildren.forEach(child => {
-      child.delete()
+      child.delete(mode)
     })
   }
 
@@ -111,13 +114,20 @@ export abstract class Referencable<
     return container as ReContainer<T, Parent>;
   }
 
-
   public addToReferencableContainer<T extends Referencable<any>>(name: string, item: T): boolean {
     return this.getContainer<T>(name).add(item)
   }
 
-  public removeFromReferencableContainer<T extends Referencable<any>>(name: string, item: T): boolean {
-    return this.getContainer<T>(name).remove(item)
+  public removeFromReferencableContainer<T extends Referencable<any>>(name: string, item: T, mode: DeletionMode = DeletionMode.RELAXED): boolean {
+    let container = this.getContainer<T>(name)
+    let result = container.remove(item, mode)
+    if (result && mode === DeletionMode.CASCADE && container.isRequired) {
+        const instance = container.get()
+        if (instance === undefined || (Array.isArray(instance) && instance.length === 0)) {
+          container._parent.destruct(mode)
+        }
+      }
+    return result
   }
 
   toJson(ctxOPt?: SerializationContext): JsonOf<this> {

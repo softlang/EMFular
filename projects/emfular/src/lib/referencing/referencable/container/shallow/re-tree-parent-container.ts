@@ -4,6 +4,7 @@ import {ReContainer} from "../re-container";
 import {ReSingleInterface} from "../re-single-interface";
 import {ReShallowInterface} from "./re-shallow-interface";
 import {ReferenceMeta} from "../../../../binding/model-definition";
+import { DeletionMode } from "../../../../utils/deletion-mode";
 
 export class ReTreeParentContainer<T extends Referencable<any>>
     extends ReContainer<T["ParentType"],T>
@@ -23,13 +24,13 @@ implements ReSingleInterface<T["ParentType"], T>,
         let me: T = this._parent
         const currentParentCont = this._parent.parent
         if(currentParentCont != undefined) {
-            currentParentCont.remove(this._parent as T["ParentType"])
+            currentParentCont.remove(this._parent as T["ParentType"], DeletionMode.RELAXED)
         }
         return item.addToReferencableContainer(this.inverseName, me)
     }
 
-    remove(item: T["ParentType"]): boolean {
-        return item.removeFromReferencableContainer(this.inverseName, this._parent)
+    remove(item: T["ParentType"], mode: DeletionMode = DeletionMode.RELAXED): boolean {
+        return item.removeFromReferencableContainer(this.inverseName, this._parent, mode)
     }
 
     delete(): void {}

@@ -4,6 +4,7 @@ import {SerializationContext} from "../../../../serialization/serialization-cont
 import {ReLinkContainer} from "./re-link-container";
 import {ReSingleContainer} from "../re-single-container";
 import {ReferenceMeta} from "../../../../binding/model-definition";
+import { DeletionMode } from "../../../../utils/deletion-mode";
 
 export class ReLinkSingleContainer<
     T extends Referencable<any>,
@@ -18,7 +19,7 @@ implements ReLinkContainer<T, P> {
 
     protected set(instance: T): void {
         if(this.inverseName !== undefined) {
-            this._instance?.removeFromReferencableContainer(this.inverseName, this._parent)
+            this._instance?.removeFromReferencableContainer(this.inverseName, this._parent, DeletionMode.RELAXED)
             this._instance = instance;
             instance.addToReferencableContainer(this.inverseName, this._parent)
         } else {
@@ -35,25 +36,25 @@ implements ReLinkContainer<T, P> {
         }
     }
 
-    remove(item: T): boolean {
+    remove(item: T, mode: DeletionMode = DeletionMode.RELAXED): boolean {
         if(this._instance == item) {
-            if (this.inverseName != undefined) {
-                item.removeFromReferencableContainer(this.inverseName, this._parent)
-            }
             this._instance = undefined;
+            if (this.inverseName != undefined) {
+                item.removeFromReferencableContainer(this.inverseName, this._parent, mode)
+            }
             return true;
         } else {
             return false;
         }
     }
 
-    override delete() {
-        this._instance?.destruct()
+    override delete(mode: DeletionMode = DeletionMode.RELAXED) {
+        this._instance?.destruct(mode)
     }
 
-    removeFromInverse(item: T): boolean {
+    removeFromInverse(item: T, mode: DeletionMode = DeletionMode.RELAXED): boolean {
         if(this.inverseName !== undefined) {
-            this._instance?.removeFromReferencableContainer(this.inverseName, item)
+            this._instance?.removeFromReferencableContainer(this.inverseName, item, mode)
             return true; // todo refine?
         }
         return false;

@@ -11,7 +11,7 @@ implements ReSingleInterface<T, P>{
 
     protected _instance?: T ;
 
-    protected constructor(parent: P, referenceName: string, refMeta: ReferenceMeta ) {
+    protected constructor(parent: P, referenceName: string, refMeta: ReferenceMeta) {
         super(parent, referenceName, refMeta);
     }
 
