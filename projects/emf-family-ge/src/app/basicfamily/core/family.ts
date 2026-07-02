@@ -1,5 +1,5 @@
 import {Person} from './persons';
-import {Referencable, ReTreeListContainer, attribute, eClass, JsonOf, Deserializer} from 'emfular';
+import {Referencable, ReTreeListContainer, attribute, eClass, JsonOf, Deserializer} from 'emfular-core';
 import {EClasses} from '../eclasses';
 
 @eClass(EClasses.Family)

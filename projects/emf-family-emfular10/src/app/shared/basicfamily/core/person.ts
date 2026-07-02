@@ -4,7 +4,7 @@ import {
   ModelList,
   Referencable,
   reference,
-} from 'emfular';
+} from 'emfular-core';
 import {Family} from './family';
 import {FamilyMeta, PersonRefs} from "./family-meta";
 import type {Man} from "./man";

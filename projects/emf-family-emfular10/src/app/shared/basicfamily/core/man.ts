@@ -1,4 +1,4 @@
-import {eClass} from "emfular";
+import {eClass} from "emfular-core";
 import {FamilyMeta} from "./family-meta";
 import {Person} from "./person";
 
