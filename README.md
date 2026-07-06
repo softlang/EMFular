@@ -6,7 +6,7 @@ A companion project, the [EMFular-Generator](https://github.com/softlang/EMFular
 
 ## Megamodel
 
-This repository hosts the four packages that together make up the EMFular megamodel. Following the reference architecture for GLSP-based web modeling tools, functionality is split into three independent layers — **Core**, **Diagram**, and **Tool** — plus an optional **Integration** layer that assembles them into ready-to-use editor components.
+This repository hosts the four packages that together make up the EMFular megamodel. Following the reference architecture for GLSP-based web modeling tools, functionality is split into three independent layers — **Core**, **Diagram**, and **Tool** — plus the **Integration** layer that assembles them into ready-to-use editor components.
 
 ![EMFular megamodel](emfular_megamodel.png)
 
