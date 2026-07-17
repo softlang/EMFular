@@ -2,15 +2,20 @@
 
 **EMFular** is a client-side, Angular-based framework for building EMF-consistent web editors. It preserves EMF's structural semantics (containment, opposites, reference integrity) entirely in the browser, without requiring any backend infrastructure, and remains extensible through idiomatic Angular development practices.
 
-A companion project, the [EMFular-Generator](https://github.com/softlang/EMFular-Generator), produces fully functional, customizable editor projects directly from Ecore metamodels.
+Its companion project, the [EMFular-Generator](https://github.com/softlang/EMFular-Generator), produces fully functional, customizable editor projects directly from Ecore metamodels. It is available [online](https://softlang.github.io/EMFular-Generator) - upload your ecore file and receive a zipped Angular project.
 
-## Megamodel
+To read more about the framework and its position within graphical modelling, read our [arXiv-paper](https://arxiv.org/abs/2606.11442).
 
-This repository hosts the four packages that together make up the EMFular megamodel. Following the reference architecture for GLSP-based web modeling tools, functionality is split into three independent layers — **Core**, **Diagram**, and **Tool** — plus the **Integration** layer that assembles them into ready-to-use editor components.
+## Framework Structure
+
+EMFular is split into three independent packages — **Core**, **Diagram**, and **Tool** — plus the **Integration** package.
+The three layer packages are intentionally decoupled, `EMFular-Core` is a pure TS library, while all other libraries are designed for Angular.
+`EMFular-Integration` is the only package that depends on all others, combining them into a complete, customizable editor shell.
+
+
 
 ![EMFular megamodel](emfular_megamodel.png)
 
-Each of the three layer packages has no cross-dependencies and can be used independently, in any TypeScript-based stack. `emfular-integration` is the only package that depends on all of the others, combining them into a complete, customizable editor shell.
 
 ### `EMFular-Core`
 
@@ -54,19 +59,20 @@ See the [integration README](./projects/integration/README.md) for details.
 
 ## Getting Started
 
-Each package can be installed independently depending on which layers you need. Installing ngx-emfular-integration alone will also pull in emfular-core, ngx-emfular-diagram, and ngx-emfular-tool as dependencies:
-
+Each package can be installed independently through `npm`:
 ```
 npm install emfular-core
 npm install ngx-emfular-diagram
 npm install ngx-emfular-tool
 npm install ngx-emfular-integration
 ```
+Installing ngx-emfular-integration alone will also pull in emfular-core, ngx-emfular-diagram, and ngx-emfular-tool as dependencies:
 
-To generate a complete, customizable editor project from an Ecore metamodel, use the [EMFular-Generator](https://github.com/softlang/EMFular-Generator), which can also be [tried out directly in the browser](https://softlang.github.io/EMFular-Generator).
+To generate a complete, customizable editor project from an Ecore metamodel, use the [EMFular-Generator](https://github.com/softlang/EMFular-Generator), which is available [online](https://softlang.github.io/EMFular-Generator).
 
 ## Learn More
 
+- [arXiv-paper](https://arxiv.org/abs/2606.11442) - framework, generator, and example as well as position within graphical web modeling
 - [EMFular-Generator](https://github.com/softlang/EMFular-Generator) — generates editor projects from `.ecore` files
 - Live demo: [BasicFamily editor](https://emfular-demos.github.io/basicfamily-ge/) with source at [emfular-demos/basicfamily-ge](https://github.com/emfular-demos/basicfamily-ge)
 
