@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {ModelService} from 'ngx-emfular-integration';
-import {IoService} from 'ngx-emfular-helper';
+import {IoService} from 'ngx-emfular-tool';
 import { Family } from '../core/family';
 import { FamilyHistoryService } from './family-history.service';
 import { Woman } from '../core/woman';

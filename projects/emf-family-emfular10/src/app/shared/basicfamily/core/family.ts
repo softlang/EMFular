@@ -1,5 +1,5 @@
 import {Person} from './person';
-import {Referencable, attribute, eClass, JsonOf, Deserializer, ModelList, reference} from 'emfular';
+import {Referencable, attribute, eClass, JsonOf, Deserializer, ModelList, reference} from 'emfular-core';
 import {FamilyMeta, FamilyRefs} from "./family-meta";
 
 @eClass(FamilyMeta, "Family")

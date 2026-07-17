@@ -1,5 +1,5 @@
 import { Family } from './family';
-import {JsonComparer, JsonOf} from 'emfular';
+import {JsonComparer, JsonOf} from 'emfular-core';
 
 describe('Family', () => {
   it('should create an instance', () => {

@@ -5,17 +5,17 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "emfular": [
-        "./dist/emfular"
+      "emfular-core": [
+        "./dist/core"
       ],
-      "ngx-emfular-helper": [
-        "./dist/ngx-emfular-helper"
+      "ngx-emfular-tool": [
+        "./dist/tool"
       ],
       "ngx-emfular-integration": [
-        "./dist/ngx-emfular-integration"
+        "./dist/integration"
       ],
-      "ngx-svg-graphics": [
-        "./dist/svg-graphics"
+      "ngx-emfular-diagram": [
+        "./dist/diagram"
       ],
     },
     "outDir": "./dist/out-tsc",

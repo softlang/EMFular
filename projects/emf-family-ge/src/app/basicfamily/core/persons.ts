@@ -1,4 +1,4 @@
-import {attribute, eClass, Referencable, ReLinkListContainer, ReLinkSingleContainer} from 'emfular';
+import {attribute, eClass, Referencable, ReLinkListContainer, ReLinkSingleContainer} from 'emfular-core';
 import {Family} from './family';
 import {EClasses} from '../eclasses';
 
