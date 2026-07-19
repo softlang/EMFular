@@ -60,7 +60,7 @@ See the [integration README](./projects/integration/README.md) for details.
 
 ## Getting Started
 
-We recommend that you use the [online EMFUlar-Genertaor](https://softlang.github.io/EMFular-Generator) to generate a complete, customizable editor project from an Ecore metamodel.
+We recommend that you use the [online EMFUlar-Generator](https://softlang.github.io/EMFular-Generator) to generate a complete, customizable editor project from an Ecore metamodel.
 However, you can also start from scratch and install single packages through `npm`:
 ```
 npm install emfular-core
