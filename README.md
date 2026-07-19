@@ -75,4 +75,17 @@ npm install ngx-emfular-integration
 - [EMFular-Generator](https://github.com/softlang/EMFular-Generator) — generates editor projects from `.ecore` files
 - Live demo: [BasicFamily editor](https://emfular-demos.github.io/basicfamily-ge/) with source at [emfular-demos/basicfamily-ge](https://github.com/emfular-demos/basicfamily-ge)
 
+## Support
+Support is currently offered by the main developer, Susanne Göbel under goebel@uni-koblenz.de.
+
+## Contributing
+We are open to contributors. Maybe you would like to write your bachelor's or master's thesis on EMFular? Read our [arXiv-paper](https://arxiv.org/abs/2606.11442) and get in touch with Susanne Göbel goebel@uni-koblenz.de.
+
+## License
+EMFular-diagram is subject to (C) 2026, SoftLang Research Team, University of Koblenz, Faculty of CS, contact Susanne Göbel or Ralf Lämmel.
+It is provided under the ***CC BY 4.0 license***.
+Basically, you are free to share and adapt the material as long as you give proper credit to us and our project.
+Feel free to include EMFular into your research but please cite us.
+
+
 
