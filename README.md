@@ -13,10 +13,15 @@ EMFular is split into three independent packages — **Core**, **Diagram**, and 
 The three layer packages are intentionally decoupled, `EMFular-Core` is a pure TS library, while all other libraries are designed for Angular.
 `EMFular-Integration` is the only package that depends on all others, combining them into a complete, customizable editor shell.
 
-
-
 ![EMFular megamodel](emfular_megamodel.png)
 
+### Transition from mono-repo to single projects
+
+To provide clearer Git histories, package-specific CI/CD pipelines, and dedicated issue tracking, we are gradually splitting this monorepository into individual repositories.
+
+The table below lists the repositories that have been split and their split date. The split date is also the ***freeze*** date for that part of the monorepository; from that point onward, all development continues exclusively in the corresponding standalone repository.
+
+ * EMFular-diagram: 22nd of July 2026
 
 ### `EMFular-Core`
 
@@ -35,7 +40,7 @@ Provides SVG-based Angular components for building graphical editors:
 - Defines contracts for graphical identity and position
 - Ships reusable SVG components, a two-layer dragging mechanism, and adaptive connectors on top of these contracts.
 
-See the [diagram README](./projects/diagram/README.md) for details.
+See the [diagram repository](https://github.com/softlang/EMFular-diagram) for details.
 
 ### `EMFular-Tool`
 
@@ -63,9 +68,9 @@ See the [integration README](./projects/integration/README.md) for details.
 We recommend that you use the [online EMFular-Generator](https://softlang.github.io/EMFular-Generator) to generate a complete, customizable editor project from an Ecore metamodel.
 However, you can also start from scratch and install single packages through `npm`:
 ```
-npm install emfular-core
+npm install emfular
 npm install ngx-emfular-diagram
-npm install ngx-emfular-tool
+npm install ngx-emfular-helper
 npm install ngx-emfular-integration
 ```
 
