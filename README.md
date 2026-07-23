@@ -22,6 +22,7 @@ To provide clearer Git histories, package-specific CI/CD pipelines, and dedicate
 The table below lists the repositories that have been split and their split date. The split date is also the ***freeze*** date for that part of the monorepository; from that point onward, all development continues exclusively in the corresponding standalone repository.
 
  * EMFular-diagram: 22nd of July 2026
+ * EMFular-tool: 23rd of July 2026
 
 ### `EMFular-Core`
 
@@ -49,7 +50,7 @@ Provides generic, model-agnostic editing utilities for canvas-based editors:
 - File I/O for loading and saving JSON models and exporting canvas content as SVG, PNG, or JPEG.
 - A lightweight history mechanism (circular buffer, persisted in `localStorage`) enabling undo/redo and session recovery.
 
-See the [tool README](./projects/tool/README.md) for details.
+See the [tool repository](https://github.com/softlang/EMFular-tool) for details.
 
 
 ### `EMFular-Integration`
@@ -70,7 +71,7 @@ However, you can also start from scratch and install single packages through `np
 ```
 npm install emfular
 npm install ngx-emfular-diagram
-npm install ngx-emfular-helper
+npm install ngx-emfular-tool
 npm install ngx-emfular-integration
 ```
 
