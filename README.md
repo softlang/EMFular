@@ -23,6 +23,7 @@ The table below lists the repositories that have been split and their split date
 
  * EMFular-diagram: 22nd of July 2026
  * EMFular-tool: 23rd of July 2026
+ * EMFular-core: 24th of July 2026
 
 ### `EMFular-Core`
 
@@ -32,7 +33,7 @@ Provides EMF-style model semantics as a pure TypeScript library, usable in any J
 - Enforces EMF reference semantics — containment, bidirectional opposites, and deletion cascades — while keeping the object graph well-formed.
 - Persists and loads models in the [EMF-Jackson](https://emfjson.github.io/projects/jackson/latest/) format, enabling direct interoperability with existing EMF workflows.
 
-See the [core README](./projects/core/README.md) for details.
+See the [core repository](https://github.com/softlang/EMFular-core) for details.
 
 ### `EMFular-Diagram`
 
@@ -69,7 +70,7 @@ See the [integration README](./projects/integration/README.md) for details.
 We recommend that you use the [online EMFular-Generator](https://softlang.github.io/EMFular-Generator) to generate a complete, customizable editor project from an Ecore metamodel.
 However, you can also start from scratch and install single packages through `npm`:
 ```
-npm install emfular
+npm install emfular-core
 npm install ngx-emfular-diagram
 npm install ngx-emfular-tool
 npm install ngx-emfular-integration
