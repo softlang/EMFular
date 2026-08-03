@@ -17,13 +17,14 @@ The three layer packages are intentionally decoupled, `EMFular-Core` is a pure T
 
 ### Transition from mono-repo to single projects
 
-To provide clearer Git histories, package-specific CI/CD pipelines, and dedicated issue tracking, we are gradually splitting this monorepository into individual repositories.
+To provide clearer Git histories, package-specific CI/CD pipelines, and dedicated issue tracking, we have splitg this monorepository into individual repositories.
 
 The table below lists the repositories that have been split and their split date. The split date is also the ***freeze*** date for that part of the monorepository; from that point onward, all development continues exclusively in the corresponding standalone repository.
 
  * EMFular-diagram: 22nd of July 2026
  * EMFular-tool: 23rd of July 2026
  * EMFular-core: 24th of July 2026
+ * EMFular-integration: 3rd of August
 
 ### `EMFular-Core`
 
