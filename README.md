@@ -63,7 +63,7 @@ Assembles `EMFular-Core`, `EMFular-Diagram`, and `EMFular-Tool` into ready-to-us
 - A stateful model-management service that supplies the current model instance, integrates the history mechanism, and exposes an API for creating, loading, and saving models.
 - Default, model-agnostic components for containment-based tree editors, including a detail view for inspecting and editing attributes and relationships.
 
-See the [integration README](./projects/integration/README.md) for details.
+See the [integration repository](https://github.com/softlang/EMFular-integration) for details.
 
 
 ## Getting Started
@@ -90,7 +90,7 @@ Support is currently offered by the main developer, Susanne Göbel under goebel@
 We are open to contributors. Maybe you would like to write your bachelor's or master's thesis on EMFular? Read our [arXiv-paper](https://arxiv.org/abs/2606.11442) and get in touch with Susanne Göbel goebel@uni-koblenz.de.
 
 ## License
-EMFular-diagram is subject to (C) 2026, SoftLang Research Team, University of Koblenz, Faculty of CS, contact Susanne Göbel or Ralf Lämmel.
+EMFular is subject to (C) 2026, SoftLang Research Team, University of Koblenz, Faculty of CS, contact Susanne Göbel or Ralf Lämmel.
 It is provided under the ***CC BY 4.0 license***.
 Basically, you are free to share and adapt the material as long as you give proper credit to us and our project.
 Feel free to include EMFular into your research but please cite us.
